@@ -1,8 +1,13 @@
 import React, { ReactElement } from 'react';
-import './App.css';
+import GlobalStyle from 'App.style';
 
 const App = (): ReactElement => {
-  return <div className="App">Hola</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <div>Hola</div>
+    </>
+  );
 };
 
 export default App;

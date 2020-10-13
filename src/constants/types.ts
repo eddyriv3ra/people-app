@@ -1,0 +1,2 @@
+export const GET_PEOPLE = 'GET_PEOPLE';
+export const GET_PEOPLE_PENDING = 'GET_PEOPLE_PENDING';
