@@ -1,7 +1,15 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getPeople } from 'actions/people.actions';
 import { PersonStyles, Button, PersonDetails } from './styles';
 
 const Person = (): ReactElement => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPeople());
+  }, []);
+
   return (
     <PersonStyles>
       <PersonDetails>

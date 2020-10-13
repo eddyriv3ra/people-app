@@ -1,12 +1,14 @@
-import { GET_PEOPLE, GET_PEOPLE_PENDING } from 'constants/types';
-
-type GetPeopleType = {
-  type: typeof GET_PEOPLE;
-};
-
-type GetPeoplePendingType = {
-  type: typeof GET_PEOPLE_PENDING;
-};
+import {
+  GET_PEOPLE,
+  GET_PEOPLE_PENDING,
+  GET_PEOPLE_ERROR,
+  GET_PEOPLE_SUCCESS,
+  GetPeopleType,
+  GetPeoplePendingType,
+  GetPeopleErrorType,
+  GetPeopleSuccessType,
+  PeopleType,
+} from 'constants/types';
 
 export const getPeople = (): GetPeopleType => ({
   type: GET_PEOPLE,
@@ -14,4 +16,13 @@ export const getPeople = (): GetPeopleType => ({
 
 export const getPeoplePending = (): GetPeoplePendingType => ({
   type: GET_PEOPLE_PENDING,
+});
+
+export const getPeopleSuccess = (data: PeopleType[]): GetPeopleSuccessType => ({
+  type: GET_PEOPLE_SUCCESS,
+  data,
+});
+
+export const getPeopleError = (): GetPeopleErrorType => ({
+  type: GET_PEOPLE_ERROR,
 });
