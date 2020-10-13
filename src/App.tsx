@@ -1,12 +1,14 @@
 import React, { ReactElement } from 'react';
-import GlobalStyle from 'App.style';
+import Person from 'components/Person';
+import SearchBar from 'components/SearchBar';
+import { StyledApp } from './App.style';
 
 const App = (): ReactElement => {
   return (
-    <>
-      <GlobalStyle />
-      <div>Hola</div>
-    </>
+    <StyledApp>
+      <SearchBar />
+      <Person />
+    </StyledApp>
   );
 };
 

@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 body {
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
@@ -18,4 +18,11 @@ html {
 }
 `;
 
-export default GlobalStyle;
+export const StyledApp = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
