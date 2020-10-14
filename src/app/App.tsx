@@ -5,7 +5,7 @@ import Container from 'components/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPeople } from 'actions/people.actions';
 import { getData, getStatus } from 'selectors/people.selector';
-import { StyledApp } from './App.style';
+import { StyledApp } from './styles';
 
 const App = (): ReactElement => {
   const dispatch = useDispatch();
