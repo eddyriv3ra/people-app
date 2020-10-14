@@ -1,10 +1,16 @@
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
+### Online Demo
+
+This app is hosted by vercel
+
+[People App](https://people-app.vercel.app/)
+
 ### Installation
 
 To install the application follow the steps below in the console, you need to
-have installed nodejs, git and npm.
+have installed nodejs, git and yarn.
 
 Download repo:
 
