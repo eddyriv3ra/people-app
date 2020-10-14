@@ -1,21 +1,19 @@
-import React, { ReactElement, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getPeople } from 'actions/people.actions';
+import React, { ReactElement } from 'react';
 import { PersonStyles, Button, PersonDetails } from './styles';
 
-const Person = (): ReactElement => {
-  const dispatch = useDispatch();
+type PersonType = {
+  name: string;
+  gender: string;
+  height: string;
+};
 
-  useEffect(() => {
-    dispatch(getPeople());
-  }, []);
-
+const Person = ({ name, gender, height }: PersonType): ReactElement => {
   return (
     <PersonStyles>
       <PersonDetails>
-        <span>Owen Lars</span>
-        <span>Height: 178</span>
-        <span>Gender; Male</span>
+        <span>{name}</span>
+        <span>Height: {height}</span>
+        <span>Gender; {gender}</span>
       </PersonDetails>
       <Button type="button">Eliminar</Button>
     </PersonStyles>

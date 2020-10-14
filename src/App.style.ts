@@ -22,7 +22,7 @@ export const StyledApp = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 3rem;
 `;

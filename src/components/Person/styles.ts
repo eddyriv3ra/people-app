@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const PersonStyles = styled.div`
   height: 8rem;
-  width: 50%;
+  margin-bottom: 1rem;
+  width: 100%;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
