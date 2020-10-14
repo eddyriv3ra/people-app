@@ -4,13 +4,13 @@ import SearchForm from 'components/SearchForm';
 import Container from 'components/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPeople } from 'actions/people.actions';
-import { getData, getStatus } from 'selectors/people.selector';
+import { getStatus, getFilteredData } from 'selectors/people.selector';
 import { StyledApp } from './styles';
 
 const App = (): ReactElement => {
   const dispatch = useDispatch();
-  const data = useSelector(getData);
   const status = useSelector(getStatus);
+  const filteredData = useSelector(getFilteredData);
 
   useEffect(() => {
     dispatch(getPeople());
@@ -20,7 +20,7 @@ const App = (): ReactElement => {
     <StyledApp>
       <SearchForm />
       <Container isLoading={status}>
-        {data.map((value) => {
+        {filteredData.map((value) => {
           return (
             <Card
               key={value.name}

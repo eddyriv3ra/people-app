@@ -3,14 +3,14 @@ import {
   GET_PEOPLE_PENDING,
   GET_PEOPLE_ERROR,
   GET_PEOPLE_SUCCESS,
-  FIND_PERSON,
+  SET_FILTER_VALUE,
   REMOVE_PERSON,
   GetPeopleType,
   GetPeoplePendingType,
   GetPeopleErrorType,
   GetPeopleSuccessType,
   PeopleType,
-  FindPersonType,
+  SetFilterType,
   RemovePersonType,
 } from 'constants/types';
 
@@ -31,9 +31,9 @@ export const getPeopleError = (): GetPeopleErrorType => ({
   type: GET_PEOPLE_ERROR,
 });
 
-export const findPerson = (name: string): FindPersonType => ({
-  type: FIND_PERSON,
-  name,
+export const setFilterValue = (value: string): SetFilterType => ({
+  type: SET_FILTER_VALUE,
+  value,
 });
 
 export const removePerson = (name: string): RemovePersonType => ({

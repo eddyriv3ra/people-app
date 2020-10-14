@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import Button from 'components/Button';
-import { findPerson } from 'actions/people.actions';
+import { setFilterValue } from 'actions/people.actions';
 import { useDispatch } from 'react-redux';
 import { InputBar, SearchBarStyles } from './styles';
 
@@ -13,7 +13,7 @@ const SearchForm = (): ReactElement => {
   };
 
   const onClick = () => {
-    dispatch(findPerson(input));
+    dispatch(setFilterValue(input));
   };
 
   return (

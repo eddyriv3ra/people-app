@@ -2,13 +2,13 @@ import {
   GET_PEOPLE_PENDING,
   GET_PEOPLE_ERROR,
   GET_PEOPLE_SUCCESS,
-  FIND_PERSON,
+  SET_FILTER_VALUE,
   REMOVE_PERSON,
   SystemState,
   GetPeoplePendingType,
   GetPeopleErrorType,
   GetPeopleSuccessType,
-  FindPersonType,
+  SetFilterType,
   RemovePersonType,
   PeopleType,
 } from 'constants/types';
@@ -16,13 +16,14 @@ import {
 const initialState = {
   data: [],
   loading: false,
+  filterValue: '',
 };
 
 type PeopleActionTypes =
   | GetPeoplePendingType
   | GetPeopleErrorType
   | GetPeopleSuccessType
-  | FindPersonType
+  | SetFilterType
   | RemovePersonType;
 
 const people = (
@@ -46,14 +47,10 @@ const people = (
         ...state,
         loading: false,
       };
-    case FIND_PERSON:
+    case SET_FILTER_VALUE:
       return {
         ...state,
-        data: state.data.filter((value: PeopleType) =>
-          value.name
-            .toLocaleLowerCase()
-            .includes(action.name.toLocaleLowerCase()),
-        ),
+        filterValue: action.value,
       };
     case REMOVE_PERSON:
       return {
