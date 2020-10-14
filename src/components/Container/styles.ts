@@ -19,8 +19,8 @@ export const Spinner = styled.div`
     height: 64px;
     margin: 8px;
     border-radius: 50%;
-    border: 6px solid blue;
-    border-color: blue transparent blue transparent;
+    border: 6px solid gray;
+    border-color: gray transparent gray transparent;
     animation: rotate 1.2s linear infinite;
   }
 
