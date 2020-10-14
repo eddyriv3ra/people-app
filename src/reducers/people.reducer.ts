@@ -1,11 +1,16 @@
 import {
   GET_PEOPLE_PENDING,
   GET_PEOPLE_ERROR,
+  GET_PEOPLE_SUCCESS,
+  FIND_PERSON,
+  REMOVE_PERSON,
   SystemState,
   GetPeoplePendingType,
   GetPeopleErrorType,
   GetPeopleSuccessType,
-  GET_PEOPLE_SUCCESS,
+  FindPersonType,
+  RemovePersonType,
+  PeopleType,
 } from 'constants/types';
 
 const initialState = {
@@ -16,7 +21,9 @@ const initialState = {
 type PeopleActionTypes =
   | GetPeoplePendingType
   | GetPeopleErrorType
-  | GetPeopleSuccessType;
+  | GetPeopleSuccessType
+  | FindPersonType
+  | RemovePersonType;
 
 const people = (
   state = initialState,
@@ -38,6 +45,22 @@ const people = (
       return {
         ...state,
         loading: false,
+      };
+    case FIND_PERSON:
+      return {
+        ...state,
+        data: state.data.filter((value: PeopleType) =>
+          value.name
+            .toLocaleLowerCase()
+            .includes(action.name.toLocaleLowerCase()),
+        ),
+      };
+    case REMOVE_PERSON:
+      return {
+        ...state,
+        data: state.data.filter(
+          (value: PeopleType) => value.name !== action.name,
+        ),
       };
     default:
       return state;

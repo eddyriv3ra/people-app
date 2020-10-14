@@ -3,10 +3,11 @@ import StyledButton from './styles';
 
 type ButtonType = {
   label: string;
+  onClick: () => void;
 };
 
-const Button = ({ label }: ButtonType): ReactElement => {
-  return <StyledButton>{label}</StyledButton>;
+const Button = ({ label, onClick }: ButtonType): ReactElement => {
+  return <StyledButton onClick={onClick}>{label}</StyledButton>;
 };
 
 export default Button;

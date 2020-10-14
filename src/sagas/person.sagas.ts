@@ -1,4 +1,4 @@
-import { all, put, takeEvery, call } from 'redux-saga/effects';
+import { all, put, takeEvery, call, StrictEffect } from 'redux-saga/effects';
 import { GET_PEOPLE } from 'constants/types';
 import {
   getPeoplePending,
@@ -17,6 +17,6 @@ function* getPeople() {
   }
 }
 
-export default function* root() {
+export default function* root(): Generator<StrictEffect> {
   yield all([takeEvery(GET_PEOPLE, getPeople)]);
 }

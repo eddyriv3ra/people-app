@@ -3,11 +3,15 @@ import {
   GET_PEOPLE_PENDING,
   GET_PEOPLE_ERROR,
   GET_PEOPLE_SUCCESS,
+  FIND_PERSON,
+  REMOVE_PERSON,
   GetPeopleType,
   GetPeoplePendingType,
   GetPeopleErrorType,
   GetPeopleSuccessType,
   PeopleType,
+  FindPersonType,
+  RemovePersonType,
 } from 'constants/types';
 
 export const getPeople = (): GetPeopleType => ({
@@ -25,4 +29,14 @@ export const getPeopleSuccess = (data: PeopleType[]): GetPeopleSuccessType => ({
 
 export const getPeopleError = (): GetPeopleErrorType => ({
   type: GET_PEOPLE_ERROR,
+});
+
+export const findPerson = (name: string): FindPersonType => ({
+  type: FIND_PERSON,
+  name,
+});
+
+export const removePerson = (name: string): RemovePersonType => ({
+  type: REMOVE_PERSON,
+  name,
 });

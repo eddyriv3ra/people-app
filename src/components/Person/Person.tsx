@@ -1,5 +1,8 @@
 import React, { ReactElement } from 'react';
-import { PersonStyles, Button, PersonDetails } from './styles';
+import { removePerson } from 'actions/people.actions';
+import Button from 'components/Button';
+import { useDispatch } from 'react-redux';
+import { PersonStyles, PersonDetails } from './styles';
 
 type PersonType = {
   name: string;
@@ -8,6 +11,12 @@ type PersonType = {
 };
 
 const Person = ({ name, gender, height }: PersonType): ReactElement => {
+  const dispatch = useDispatch();
+
+  const onClick = () => {
+    dispatch(removePerson(name));
+  };
+
   return (
     <PersonStyles>
       <PersonDetails>
@@ -15,7 +24,7 @@ const Person = ({ name, gender, height }: PersonType): ReactElement => {
         <span>Height: {height}</span>
         <span>Gender; {gender}</span>
       </PersonDetails>
-      <Button type="button">Eliminar</Button>
+      <Button onClick={onClick} label="Eliminar" />
     </PersonStyles>
   );
 };
