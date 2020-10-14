@@ -4,7 +4,7 @@ import { findPerson } from 'actions/people.actions';
 import { useDispatch } from 'react-redux';
 import { InputBar, SearchBarStyles } from './styles';
 
-const SearchBar = (): ReactElement => {
+const SearchForm = (): ReactElement => {
   const dispatch = useDispatch();
   const [input, setInput] = useState('');
 
@@ -29,4 +29,4 @@ const SearchBar = (): ReactElement => {
   );
 };
 
-export default SearchBar;
+export default SearchForm;

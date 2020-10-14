@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from 'react';
-import Person from 'components/Person';
-import SearchBar from 'components/SearchBar';
+import Card from 'components/Card';
+import SearchForm from 'components/SearchForm';
 import Container from 'components/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPeople } from 'actions/people.actions';
@@ -18,11 +18,11 @@ const App = (): ReactElement => {
 
   return (
     <StyledApp>
-      <SearchBar />
+      <SearchForm />
       <Container isLoading={status}>
         {data.map((value) => {
           return (
-            <Person
+            <Card
               key={value.name}
               name={value.name}
               gender={value.gender}

@@ -10,7 +10,7 @@ type PersonType = {
   height: string;
 };
 
-const Person = ({ name, gender, height }: PersonType): ReactElement => {
+const Card = ({ name, gender, height }: PersonType): ReactElement => {
   const dispatch = useDispatch();
 
   const onClick = () => {
@@ -29,4 +29,4 @@ const Person = ({ name, gender, height }: PersonType): ReactElement => {
   );
 };
 
-export default Person;
+export default Card;
